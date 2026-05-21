@@ -90,6 +90,13 @@ export default function RootLayout({
               <div className="masthead-info-center">@satuankecepatan</div>
               <div className="masthead-info-right" suppressHydrationWarning>{editionDate}</div>
             </div>
+            <nav className="masthead-nav">
+              <Link href="/rubrik/esai-dan-renungan" className="nav-link">Esai & Renungan</Link>
+              <span className="nav-separator">•</span>
+              <Link href="/rubrik/sketsa-malam" className="nav-link">Sketsa Malam</Link>
+              <span className="nav-separator">•</span>
+              <Link href="/rubrik/cerita-dan-prosa" className="nav-link">Cerita dan Prosa</Link>
+            </nav>
           </header>
         </div>
 
@@ -131,9 +138,9 @@ export default function RootLayout({
             <div className="footer-col">
               <h4>Rubrik Utama</h4>
               <ul>
-                <li><Link href="/">Esei & Renungan</Link></li>
-                <li><Link href="/">Sketsa Malam</Link></li>
-                <li><Link href="/">Catatan Harian</Link></li>
+                <li><Link href="/rubrik/esai-dan-renungan">Esai & Renungan</Link></li>
+                <li><Link href="/rubrik/sketsa-malam">Sketsa Malam</Link></li>
+                <li><Link href="/rubrik/cerita-dan-prosa">Cerita dan Prosa</Link></li>
               </ul>
             </div>
             <div className="footer-col">

@@ -77,3 +77,23 @@ export async function getPostData(slug: string): Promise<PostData> {
     coverImage: matterResult.data.coverImage || '',
   } as PostData;
 }
+
+export function slugifyCategory(category: string): string {
+  return category
+    .toLowerCase()
+    .replace(/esei/g, 'esai')
+    .replace(/&/g, 'dan')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '');
+}
+
+export function getCategoryDisplayName(slug: string): string {
+  const mapping: { [key: string]: string } = {
+    'esai-dan-renungan': 'Esai & Renungan',
+    'esei-dan-renungan': 'Esai & Renungan',
+    'sketsa-malam': 'Sketsa Malam',
+    'cerita-dan-prosa': 'Cerita dan Prosa',
+  };
+  return mapping[slug.toLowerCase()] || slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+

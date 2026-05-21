@@ -71,7 +71,7 @@ export default function Home() {
       {/* Grid Section for Recent 5 Posts */}
       {secondaryPosts.length > 0 && (
         <section>
-          <h3 className="news-grid-title">Warta Terbaru Lainnya</h3>
+          <h3 className="news-grid-title">Warta Lainnya</h3>
           <div className="news-grid">
             {secondaryPosts.map((post) => (
               <article key={post.slug} className="post-card">

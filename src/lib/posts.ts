@@ -2,6 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import markedKatex from 'marked-katex-extension';
+
+marked.use(markedKatex({
+  throwOnError: false,
+  nonStandard: true,
+}));
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 

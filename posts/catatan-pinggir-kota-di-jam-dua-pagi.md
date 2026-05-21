@@ -19,3 +19,9 @@ Banyak orang mengira kesunyian adalah ketiadaan suara. Padahal, kesunyian malam 
 Namun, alih-alih menghindarinya dengan memaksa mata terpejam, ada baiknya kita berteman dengan sunyi itu. Duduk di lantai, memandangi lampu jalan yang berkedip kekuningan di kejauhan, dan menerima bahwa ada beberapa hal di hidup ini yang memang tidak memiliki jawaban instan.
 
 Malam akan segera berganti pagi. Beberapa jam lagi, alarm akan berbunyi, lampu-lampu kantor akan dinyalakan, dan kita akan kembali memakai topeng kesibukan kita. Tetapi untuk saat ini, di bawah langit malam yang pekat, mari kita rayakan kesunyian ini sebagai satu-satunya ruang di mana kita diizinkan untuk menjadi rapuh.
+
+Sebagai contoh, kesunyian malam ini dapat dirumuskan secara matematis sebagai fungsi waktu $S(t)$ di mana:
+$$S(t) = \int_{0}^{t} e^{-x^2} dx$$
+Dan pada saat larut malam, tingkat keheningannya mendekati nilai limitnya:
+$$\lim_{t \to \infty} S(t) = \frac{\sqrt{\pi}}{2}$$
+

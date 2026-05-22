@@ -498,6 +498,15 @@ a {
   line-height: 1.7;
 }
 
+.single-post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2.5rem auto;
+  border: var(--border-thin);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
 .single-post-content pre {
   background-color: #F5EFE6;
   padding: 1.25rem;

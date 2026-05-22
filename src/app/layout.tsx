@@ -3,6 +3,7 @@ import { Playfair_Display, Lora, Courier_Prime } from "next/font/google";
 import Link from "next/link";
 import "katex/dist/katex.min.css";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],

@@ -4,6 +4,7 @@ import Link from "next/link";
 import "katex/dist/katex.min.css";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import MastheadInfo from "@/app/components/MastheadInfo";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -34,48 +35,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Dynamic date, Volume, and Issue number based on current date
-  const currentDate = new Date();
-
-  // Calculate Volume: starts on April 24, 2026 (Volume 1)
-  let volumeNum = currentDate.getFullYear() - 2026 + 1;
-  const month = currentDate.getMonth(); // 0-11
-  const date = currentDate.getDate();
-  if (month < 3 || (month === 3 && date < 24)) {
-    volumeNum--;
-  }
-  if (volumeNum < 1) volumeNum = 1;
-
-  // Convert volumeNum to Roman numeral
-  const toRoman = (num: number): string => {
-    const romanMap: { [key: number]: string } = {
-      1: "I", 2: "II", 3: "III", 4: "IV", 5: "V",
-      6: "VI", 7: "VII", 8: "VIII", 9: "IX", 10: "X"
-    };
-    return romanMap[num] || num.toString();
-  };
-  const volumeRoman = toRoman(volumeNum);
-
-  // Calculate No.: starts on April (No. 01)
-  let noNum = 1;
-  if (month >= 3) {
-    noNum = month - 3 + 1;
-  } else {
-    noNum = month + 9 + 1;
-  }
-  const noFormatted = noNum.toString().padStart(2, "0");
-
-  const days = ["MINGGU", "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU"];
-  const months = [
-    "JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI",
-    "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"
-  ];
-
-  const dayName = days[currentDate.getDay()];
-  const dateNum = currentDate.getDate();
-  const monthName = months[currentDate.getMonth()];
-  const yearNum = currentDate.getFullYear();
-  const editionDate = `${dayName}, ${dateNum} ${monthName} ${yearNum}`;
+  const initialServerDate = new Date().toISOString();
 
   return (
     <html lang="id" className={`${playfair.variable} ${lora.variable} ${courier.variable}`}>
@@ -86,11 +46,7 @@ export default function RootLayout({
               <Link href="/">Satuan Kecepatan</Link>
             </h1>
             <p className="masthead-tagline">5:3 — 29:51 — 6:114 — 45:6</p>
-            <div className="masthead-info">
-              <div className="masthead-info-left" suppressHydrationWarning>Volume {volumeRoman} / No. {noFormatted}</div>
-              <div className="masthead-info-center">@satuankecepatan</div>
-              <div className="masthead-info-right" suppressHydrationWarning>{editionDate}</div>
-            </div>
+            <MastheadInfo initialServerDate={initialServerDate} />
             <nav className="masthead-nav">
               <Link href="/rubrik/esai-dan-renungan" className="nav-link">Esai & Renungan</Link>
               <span className="nav-separator">•</span>

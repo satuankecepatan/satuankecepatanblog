@@ -31,14 +31,14 @@ export async function generateStaticParams() {
 
 export default async function PostPage({ params }: PageProps) {
   const { slug } = await params;
-  
+
   try {
     const postData = await getPostData(slug);
 
     return (
       <article className="single-post-container">
         <Link href="/" className="back-link">
-          ← KEMBALI KE BERANDA
+          ← KEMBALI KE ◕ BERANDA
         </Link>
 
         <header className="single-post-header">
@@ -48,7 +48,7 @@ export default async function PostPage({ params }: PageProps) {
           </div>
         </header>
 
-        <div 
+        <div
           className="single-post-content"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }}
         />

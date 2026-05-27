@@ -48,7 +48,7 @@ export default async function Home() {
             />
             <div className="read-more-wrapper">
               <Link href={`/posts/${post.slug}`} className="read-more-btn">
-                BACA SELENGKAPNYA
+                ◕ BACA SELENGKAPNYA
               </Link>
             </div>
           </article>

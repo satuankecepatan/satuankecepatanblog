@@ -40,7 +40,7 @@ export default function RootLayout({
         <div className="masthead-wrapper">
           <header className="masthead">
             <h1 className="masthead-title">
-              <Link href="/">SATUAN KECEPATAN</Link>
+              <Link href="/">◕ SATUAN KECEPATAN</Link>
             </h1>
           </header>
         </div>

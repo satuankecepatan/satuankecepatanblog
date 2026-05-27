@@ -19,7 +19,9 @@ export interface PostData {
   category: string;
   coverImage?: string;
   contentHtml?: string;
+  previewHtml?: string;
 }
+
 
 export function getSortedPostsData(): PostData[] {
   if (!fs.existsSync(postsDirectory)) {
@@ -96,4 +98,43 @@ export function getCategoryDisplayName(slug: string): string {
   };
   return mapping[slug.toLowerCase()] || slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
+
+export async function getSortedPostsWithHtml(): Promise<PostData[]> {
+  if (!fs.existsSync(postsDirectory)) {
+    return [];
+  }
+  
+  const fileNames = fs.readdirSync(postsDirectory);
+  const posts = await Promise.all(
+    fileNames
+      .filter((fileName) => fileName.endsWith('.md'))
+      .map(async (fileName) => {
+        const slug = fileName.replace(/\.md$/, '');
+        const fullPath = path.join(postsDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const matterResult = matter(fileContents);
+        
+        // Search for the first markdown heading (e.g. ##, ###)
+        const headingMatch = matterResult.content.match(/^#{1,6}\s+/m);
+        const previewMarkdown = headingMatch && headingMatch.index !== undefined
+          ? matterResult.content.substring(0, headingMatch.index)
+          : matterResult.content;
+          
+        const previewHtml = await marked.parse(previewMarkdown);
+        
+        return {
+          slug,
+          title: matterResult.data.title || '',
+          date: matterResult.data.date || '',
+          excerpt: matterResult.data.excerpt || '',
+          category: matterResult.data.category || 'General',
+          coverImage: matterResult.data.coverImage || '',
+          previewHtml,
+        } as PostData;
+      })
+  );
+  
+  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
 

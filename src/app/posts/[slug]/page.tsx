@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPostData, getSortedPostsData } from "@/lib/posts";
+import { getPostData, getSortedPostsData, getCategoryDisplayName } from "@/lib/posts";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -39,32 +38,15 @@ export default async function PostPage({ params }: PageProps) {
     return (
       <article className="single-post-container">
         <Link href="/" className="back-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          KEMBALI KE BERANDA
+          ← KEMBALI KE BERANDA
         </Link>
 
         <header className="single-post-header">
-          <span className="category-tag">{postData.category}</span>
           <h1 className="single-post-title">{postData.title}</h1>
           <div className="post-meta">
-            DITERBITKAN PADA {formatDate(postData.date).toUpperCase()}
+            {formatDate(postData.date).toUpperCase()} ◕ {getCategoryDisplayName(postData.category).toUpperCase()}
           </div>
         </header>
-
-        {postData.coverImage && (
-          <div className="single-post-image-wrapper">
-            <Image
-              src={postData.coverImage}
-              alt={postData.title}
-              fill
-              priority
-              className="single-post-image"
-            />
-          </div>
-        )}
 
         <div 
           className="single-post-content"

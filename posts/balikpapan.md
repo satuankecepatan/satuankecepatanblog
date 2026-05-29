@@ -2,7 +2,7 @@
 title: "Balikpapan, dan Rasa Letih"
 date: "2026-05-22"
 excerpt: "Perjalanan 34 jam menuju KRB..."
-category: "esai-dan-renungan"
+category: "Essay"
 coverImage: "/media/balikpapan/balikpapan.JPG"
 ---
 
@@ -86,7 +86,7 @@ Gw pribadi gak ikut event di auditorium ini. Keknya pengenalan sama materi dikit
 
 ![Bunga di KRB](/media/balikpapan/bunga.JPG)
 
-Untuk kelompok, gw masuk kelompok orchidarium. Masuk ke wilayah trek alami, bener2 masuk hutan dan turun naik bukit. Gw yakin, ini yang paling memakan fisik di antara semua kelompok. 
+Untuk kelompok, gw masuk kelompok orchidarium. Masuk ke wilayah trek alami, bener2 masuk hutan dan turun naik bukit. Gw yakin, ini yang paling memakan fisik di antara semua kelompok.
 
 Kondisi temen2 udah pada bete, stress, sumpah serah. Gw juga. Tapi yaudah, mau gimana lagi.
 

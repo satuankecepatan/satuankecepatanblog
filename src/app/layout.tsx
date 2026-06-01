@@ -51,7 +51,7 @@ export default function RootLayout({
 
         <footer className="footer">
           <p className="footer-text">
-            © 2026 SATUAN KECEPATAN ◕ Jurnal Sastra dan Catatan Mandiri
+            © 2026 SATUAN KECEPATAN ◕ @satuankecepatan on Instagram
           </p>
         </footer>
         <Analytics />

@@ -51,7 +51,7 @@ export default function RootLayout({
 
         <footer className="footer">
           <p className="footer-text">
-            © 2026 SATUAN KECEPATAN ◕ @satuankecepatan on Instagram
+            © 2026 SATUAN KECEPATAN ◕ @satuankecepatan on Instagram ◕ <Link href="/tarot" style={{ textDecoration: "underline" }}>Tarot Harian</Link>
           </p>
         </footer>
         <Analytics />

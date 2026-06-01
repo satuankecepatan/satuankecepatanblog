@@ -298,9 +298,10 @@ a {
 
 /* Tarot Card Page Styles */
 .tarot-page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 100%;
   margin-top: 1rem;
 }
 
@@ -332,12 +333,14 @@ a {
 
 /* 3D Card Scene */
 .tarot-card-scene {
+  position: relative;
   width: 280px;
   height: 460px;
   perspective: 1000px;
   margin: 2rem auto;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  z-index: 10;
 }
 
 .tarot-card-inner {
@@ -416,16 +419,16 @@ a {
 
 /* Card details (revealed after flip) */
 .tarot-details-section {
+  position: relative;
   width: 100%;
   opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s ease;
   visibility: hidden;
+  z-index: 5;
 }
 
 .tarot-details-section.is-visible {
   opacity: 1;
-  transform: translateY(0);
   visibility: visible;
 }
 

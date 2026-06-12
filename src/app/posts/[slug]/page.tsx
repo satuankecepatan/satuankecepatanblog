@@ -39,8 +39,18 @@ export default async function PostPage({ params }: PageProps) {
     notFound();
   }
 
+  const hasMath = postData.contentHtml?.includes('class="katex"');
+
   return (
     <article className="single-post-container">
+      {hasMath && (
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/katex.min.css"
+          integrity="sha384-3gJWZ90HSDHdxFAXXsgoVYGXWJDqwsp2M5CjhGsYgUTPQVyQH3Ls68Cn8HzHM3+r"
+          crossOrigin="anonymous"
+        />
+      )}
       <Link href="/" className="back-link">
         ← KEMBALI KE ◕ BERANDA
       </Link>

@@ -28,8 +28,18 @@ export default async function Home() {
     );
   }
 
+  const hasMath = allPosts.some((post) => post.previewHtml?.includes('class="katex"'));
+
   return (
     <div className="posts-list">
+      {hasMath && (
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.47/dist/katex.min.css"
+          integrity="sha384-3gJWZ90HSDHdxFAXXsgoVYGXWJDqwsp2M5CjhGsYgUTPQVyQH3Ls68Cn8HzHM3+r"
+          crossOrigin="anonymous"
+        />
+      )}
       {allPosts.map((post, index) => (
         <div key={post.slug}>
           {index > 0 && <div className="post-separator">◕</div>}

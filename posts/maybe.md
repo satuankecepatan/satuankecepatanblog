@@ -1,6 +1,6 @@
 ---
 title: "Maybe this was always my fault"
-date: 2026-06-03
+date: "2026-06-03"
 category: "Life"
 ---
 
@@ -16,13 +16,13 @@ I kept telling myself that I'm not doing _anything_. Even though I am, objective
 
 These are things that I can objectively say something I've achieved. Something that I can consider worth of rest.
 
-But being alone while resting is hell. I wish it weren't like this. I wish my brain chemicals are arranged in a way that makes it easy for me to accept that I may need *some* form of rest as well.
+But being alone while resting is hell. I wish it weren't like this. I wish my brain chemicals are arranged in a way that makes it easy for me to accept that I may need _some_ form of rest as well.
 
 ### Some Form of Rest
 
 There's this old expression: "I can rest in heaven". Maybe I read that somewhere and thought to myself: Hey, what a cool idea.
 
-Let me just apply that to myself. So that every passivity turns into flagellation of me not doing *anything*. My brain is fucked and I have myself to blame.
+Let me just apply that to myself. So that every passivity turns into flagellation of me not doing _anything_. My brain is fucked and I have myself to blame.
 
 You know what? Writing this helps.
 
